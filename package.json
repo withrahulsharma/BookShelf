@@ -1,0 +1,18 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "description": "Book Browse",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js",
+    "start": "nodemon index.js"
+  },
+  "author": "Rahul",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.7.0",
+    "nodemon": "^3.0.2"
+  }
+}
