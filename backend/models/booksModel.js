@@ -35,7 +35,6 @@ class BooksModel {
   }
   addBook(book, callback) {
     const insertBooksQuery = `INSERT INTO books (author, title, genre,publishedDate,available) VALUES('${book.author}', '${book.title}', '${book.genre}' , '${book.publishedDate}', ${book.available})`;
-    //console.log("Adding Books", insertBooksQuery);
     db.query(insertBooksQuery, callback);
   }
   getBooks(filter, callback) {
@@ -90,9 +89,6 @@ class BooksModel {
         }
       });
     });
-
-    //const insertBulkDefaultBooksQuery = `INSERT INTO books (author, title, genre, publishedDate, available) VALUES('Author1', 'Title1', 'genre1', ),('Author2', 'Title2', 'genre2' ),('Author3', 'Title3', 'genre3' ),('Author4', 'Title4', 'genre4' );`;
-    //const res = db.query(insertBulkDefaultBooksQuery, callback);
   }
   getAllUsers(callback) {
     db.query("SELECT * FROM users", callback);

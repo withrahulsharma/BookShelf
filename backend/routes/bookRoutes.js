@@ -4,8 +4,9 @@ const bookModel = require("../models/booksModel");
 
 // Get all users
 router.post("/getbooks", (req, res) => {
+  console.log(`POST /getbooks`);
   const filter = req.body;
-  console.log("Getting Books filter Data", filter);
+  //console.log("Getting Books filter Data", filter);
   bookModel.getBooks(filter, (err, results) => {
     if (err) {
       console.error("Error fetching users:", err);
@@ -18,8 +19,9 @@ router.post("/getbooks", (req, res) => {
 });
 
 router.post("/book", (req, res) => {
+  console.log(`POST /book`);
   const newBook = req.body;
-  //do some checks for parameters
+  //do  checks for parameters
   if (!newBook.author) {
     res.status(400).json({ error: "Author field can't be empty" });
     return;
@@ -34,8 +36,9 @@ router.post("/book", (req, res) => {
       res.status(500).json({ error: "Internal Server Error" });
       return;
     }
+
     res
-      .status(201)
+      .status(200)
       .json({ message: "Book added successfully", userId: result.insertId });
   });
 });
