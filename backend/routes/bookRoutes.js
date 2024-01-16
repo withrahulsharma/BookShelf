@@ -13,7 +13,7 @@ router.post("/getbooks", (req, res) => {
       res.status(500).json({ error: "Internal Server Error" });
       return;
     }
-    console.log(results);
+    //console.log(results);
     res.json(results);
   });
 });
@@ -21,7 +21,7 @@ router.post("/getbooks", (req, res) => {
 router.post("/book", (req, res) => {
   console.log(`POST /book`);
   const newBook = req.body;
-  //do  checks for parameters
+  //do checks for parameters
   if (!newBook.author) {
     res.status(400).json({ error: "Author field can't be empty" });
     return;

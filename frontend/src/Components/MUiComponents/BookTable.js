@@ -14,9 +14,16 @@ export default function BasicTable(props) {
       setRows(props.books);
     }
   }, [props.books]);
+  function handleOnRowClick() {
+    console.log("Row clicked Book Table");
+  }
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table
+        sx={{ minWidth: 650 }}
+        aria-label="simple table"
+        onRowClick={handleOnRowClick}
+      >
         <TableHead>
           <TableRow>
             <TableCell>Book Title</TableCell>

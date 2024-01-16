@@ -72,98 +72,99 @@ export default function CustomizedDialogs(props) {
   }
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Add Book
-      </Button>
-      <BootstrapDialog
-        onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-      >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          Add Books
-        </DialogTitle>
-        <IconButton
-          aria-label="close"
-          onClick={handleClose}
-          sx={{
-            position: "absolute",
-            right: 8,
-            top: 8,
-            color: (theme) => theme.palette.grey[500],
-          }}
+      <div style={{ textAlign: "center" }}>
+        <Button variant="outlined" onClick={handleClickOpen}>
+          Add Book
+        </Button>
+        <BootstrapDialog
+          onClose={handleClose}
+          aria-labelledby="customized-dialog-title"
+          open={open}
         >
-          <CloseIcon />
-        </IconButton>
-        <DialogContent dividers>
-          <Grid container spacing={2}>
-            <Grid container>
-              <Grid item xs={4}>
-                Title
-              </Grid>
+          <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+            Add Books
+          </DialogTitle>
+          <IconButton
+            aria-label="close"
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+              color: (theme) => theme.palette.grey[500],
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+          <DialogContent dividers>
+            <Grid container spacing={2}>
+              <Grid container>
+                <Grid item xs={6}>
+                  Title
+                </Grid>
 
-              <Grid item>
-                <TextField
-                  size="small"
-                  onChange={handleTitleChange}
-                  id="outlined-basic"
-                  /* label="Outlined" */
-                  variant="outlined"
-                />
+                <Grid item>
+                  <TextField
+                    size="small"
+                    onChange={handleTitleChange}
+                    id="outlined-basic"
+                    /* label="Outlined" */
+                    variant="outlined"
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid container>
-              <Grid item xs={4}>
-                Author
-              </Grid>
+              <Grid container>
+                <Grid item xs={6}>
+                  Author
+                </Grid>
 
-              <Grid item>
-                <TextField
-                  size="small"
-                  onChange={handleAuthorChange}
-                  id="outlined-basic"
-                  /* label="Outlined" */
-                  variant="outlined"
-                />
+                <Grid item>
+                  <TextField
+                    size="small"
+                    onChange={handleAuthorChange}
+                    id="outlined-basic"
+                    /* label="Outlined" */
+                    variant="outlined"
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid container>
-              <Grid item xs={4}>
-                Genre
+              <Grid container>
+                <Grid item xs={6}>
+                  Genre
+                </Grid>
+                <Grid item>
+                  <TextField
+                    size="small"
+                    onChange={handleGenreChange}
+                    id="outlined-basic"
+                    /* label="Outlined" */
+                    variant="outlined"
+                  />
+                </Grid>
               </Grid>
-              <Grid item>
-                <TextField
-                  size="small"
-                  onChange={handleGenreChange}
-                  id="outlined-basic"
-                  /* label="Outlined" */
-                  variant="outlined"
-                />
-              </Grid>
-            </Grid>
-            <Grid container>
-              <Grid item xs={4}>
-                PublishedDate
-              </Grid>
-              <Grid item>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DemoContainer components={["DatePicker"]}>
-                    <DatePicker label="Basic date picker" />
-                  </DemoContainer>
-                </LocalizationProvider>
+              <Grid container>
+                <Grid item xs={6}>
+                  PublishedDate
+                </Grid>
+                <Grid item>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["DatePicker"]}>
+                      <DatePicker label="Basic date picker" />
+                    </DemoContainer>
+                  </LocalizationProvider>
 
-                {/* <TextField
+                  {/* <TextField
                   size="small"
                   onChange={handlePublishedDateChange}
                   id="outlined-basic"
                   variant="outlined"
                 /> */}
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid container>
-              <Grid item xs={4}>
-                <Checkbox {...label} defaultChecked />
-                {/* Available
+              <Grid container>
+                <Grid item xs={6}>
+                  <Checkbox {...label} defaultChecked />
+                  {/* Available
               </Grid>
               <Grid item>
                 <TextField
@@ -172,14 +173,15 @@ export default function CustomizedDialogs(props) {
                   id="outlined-basic"
                   variant="outlined"
                 /> */}
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleAddBook}>Add</Button>
-        </DialogActions>
-      </BootstrapDialog>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleAddBook}>Add</Button>
+          </DialogActions>
+        </BootstrapDialog>
+      </div>
     </React.Fragment>
   );
 }
